@@ -9,6 +9,7 @@
  <link rel="stylesheet" href="../style.css/nav.css">
 <link rel="stylesheet" href="../style.css/resource_admin.css">
 <link rel="stylesheet" href="../style.css/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
@@ -45,9 +46,27 @@ Last UID: <span id="lastUID">None</span>
 </div>
 
 <div class="dashboard">
-<div class="card">Total Resources<h2 id="totalCount">0</h2></div>
-<div class="card">Active<h2 id="activeCount">0</h2></div>
-<div class="card">Inactive<h2 id="inactiveCount">0</h2></div>
+<div class="card">
+<div class="card-content">
+<i class="fas fa-boxes"></i>
+<h3>Total Resources</h3>
+<p id="totalCount">0</p>
+</div>
+</div>
+<div class="card">
+<div class="card-content">
+<i class="fas fa-check-circle"></i>
+<h3>Active</h3>
+<p id="activeCount">0</p>
+</div>
+</div>
+<div class="card">
+<div class="card-content">
+<i class="fas fa-times-circle"></i>
+<h3>Inactive</h3>
+<p id="inactiveCount">0</p>
+</div>
+</div>
 </div>
 
 <div class="controls">

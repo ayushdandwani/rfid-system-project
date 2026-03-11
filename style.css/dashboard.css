@@ -112,6 +112,38 @@ body{
   font-weight: 500;
   opacity: 0.9;
 }
+
+.card h3{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.card.late-arrivals{
+  background:var(--bg-secondary);
+  color:var(--text-primary);
+  border: 1px solid rgba(51,65,85,0.15);
+  backdrop-filter: blur(16px);
+}
+
+.card.late-arrivals .statusItem{
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(51,65,85,0.2);
+  font-size: 14px;
+  opacity: 0.9;
+  color:var(--text-primary);
+}
+
+.card.late-arrivals .statusItem:last-child{
+  border-bottom: none;
+}
+
+.card.late-arrivals h3{
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color:var(--text-primary);
+}
 .card:hover{
   transform: translateY(-12px) rotateX(6deg) rotateY(-6deg);
 }
