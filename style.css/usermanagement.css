@@ -210,30 +210,18 @@ body.dark-theme .navbar {
 }
 
 .stat-box p {
-    font-size: 32px;
+    font-size: 25px;
     font-weight: 700;
     color: white;
     margin: 0;
 }
 
-.super-admin {
-    background: linear-gradient(135deg, #FF6B6B 0%, #FF5252 100%);
-    border-color: #FF6B6B;
-}
-
-.system-admin {
-    background: linear-gradient(135deg, #4ECDC4 0%, #2BA39C 100%);
-    border-color: #4ECDC4;
-}
-
-.operations-admin {
-    background: linear-gradient(135deg, #45B7D1 0%, #1A9BCB 100%);
-    border-color: #45B7D1;
-}
-
+.super-admin,
+.system-admin,
+.operations-admin,
 .analyst {
-    background: linear-gradient(135deg, #FFA07A 0%, #FF8C5A 100%);
-    border-color: #FFA07A;
+    background: var(--grad) !important;
+    border-color: transparent !important;
 }
 
 /* Controls Section */

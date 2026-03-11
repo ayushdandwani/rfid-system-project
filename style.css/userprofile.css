@@ -33,7 +33,7 @@ body.dark {
 html, body {
     width: 100%;
     font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, rgba(93, 39, 155, 0.1) 0%, rgba(139, 92, 246, 0.08) 100%);
     color: var(--text-dark);
     min-height: 100vh;
     padding: 40px;

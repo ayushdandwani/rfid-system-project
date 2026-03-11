@@ -1,8 +1,69 @@
 /* SIDEBAR */
 
 function toggleSidebar(){
-document.getElementById("sidebar").classList.toggle("active");
+const sidebar = document.getElementById("sidebar");
+const body = document.body;
+    
+sidebar.classList.toggle("active");
+    
+// Prevent body scroll when sidebar is active
+if (sidebar.classList.contains("active")) {
+    body.style.overflow = "hidden";
+} else {
+    body.style.overflow = "";
 }
+}
+
+/* PREVENT BODY SCROLL WHEN SIDEBAR IS OPEN */
+function handleSidebarScroll(e) {
+    const sidebar = document.getElementById("sidebar");
+    const navLinks = document.querySelector(".nav-links");
+    
+    // If sidebar is open and scroll is within sidebar
+    if (sidebar.classList.contains("active") && navLinks.contains(e.target)) {
+        e.stopPropagation();
+        // Allow sidebar to scroll normally
+        return;
+    }
+    
+    // Prevent body scroll when sidebar is open
+    if (sidebar.classList.contains("active")) {
+        e.preventDefault();
+    }
+}
+
+/* INITIALIZE SCROLL BEHAVIOR */
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.getElementById("sidebar");
+    const body = document.body;
+    
+    // Add scroll event listener to sidebar
+    sidebar.addEventListener('wheel', handleSidebarScroll, { passive: false });
+    sidebar.addEventListener('touchmove', handleSidebarScroll, { passive: false });
+    
+    // Close sidebar when clicking outside
+    document.addEventListener('click', function(e) {
+        if (sidebar.classList.contains("active") && 
+            !sidebar.contains(e.target) && 
+            !e.target.closest('.rfid-btn')) {
+            sidebar.classList.remove("active");
+            body.style.overflow = "";
+        }
+    });
+    
+    // Reset body overflow when sidebar is closed
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.attributeName === "class") {
+                if (!sidebar.classList.contains("active")) {
+                    body.style.overflow = "";
+                }
+            }
+        });
+    });
+    
+    observer.observe(sidebar, { attributes: true });
+});
 
 /* LOAD USER PROFILE */
 function loadUserProfile() {
